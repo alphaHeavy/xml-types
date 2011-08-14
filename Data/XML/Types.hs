@@ -64,6 +64,7 @@ module Data.XML.Types
 	, hasAttributeText
 	, attributeContent
 	, attributeText
+  , Attribute
 	) where
 import Control.Monad ((>=>))
 import Data.Maybe (isJust)
@@ -120,6 +121,8 @@ data Node
 
 instance Typeable Node where
 	typeOf = typeString "Node"
+
+type Attribute = (Name, [Content])
 
 data Element = Element
 	{ elementName :: Name
